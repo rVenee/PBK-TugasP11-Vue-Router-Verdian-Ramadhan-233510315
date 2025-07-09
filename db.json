@@ -1,0 +1,28 @@
+{
+  "barang": [
+    {
+      "id": 1,
+      "kode": "BRG001",
+      "nama": "Laptop ASUS X555",
+      "kategori": "Elektronik",
+      "stok": 12,
+      "harga": 7500000
+    },
+    {
+      "id": 2,
+      "kode": "BRG002",
+      "nama": "Meja Kantor",
+      "kategori": "Furniture",
+      "stok": 7,
+      "harga": 1200000
+    },
+    {
+      "id": "0f3c",
+      "kode": "BRG003",
+      "nama": "Mouse Fantech Helios XD3V3",
+      "kategori": "Elektronik",
+      "stok": 20,
+      "harga": 250000
+    }
+  ]
+}

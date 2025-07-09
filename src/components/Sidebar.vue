@@ -55,9 +55,9 @@ aside {
     min-height: 100vh;
     overflow: hidden;
     padding: 16px;
-
-    background-color: #ffffff;
-    color: #969696;
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
+    border-right: 1px solid #e0e6ed;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.02);
 }
 
 .logo {
