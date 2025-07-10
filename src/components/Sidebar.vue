@@ -20,9 +20,9 @@
                 <span class="text">Daftar Barang</span>
             </RouterLink>
 
-            <RouterLink class="button" to="/grafikpenjualan">
-                <span class="material-icons">query_stats</span>
-                <span class="text">Grafik Penjualan</span>
+            <RouterLink class="button" to="/transaksi">
+                <span class="material-icons">add_shopping_cart</span>
+                <span class="text">Transaksi</span>
             </RouterLink>
 
             <RouterLink class="button" to="/riwayatstok">
