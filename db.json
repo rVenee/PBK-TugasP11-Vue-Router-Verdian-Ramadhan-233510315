@@ -23,6 +23,54 @@
       "kategori": "Elektronik",
       "stok": 10,
       "harga": 250000
+    },
+    {
+      "id": "3",
+      "kode": "BRG004",
+      "nama": "Kursi Gaming Rexus RGC 103",
+      "kategori": "Furniture",
+      "stok": 3,
+      "harga": 1500000
+    },
+    {
+      "id": "4",
+      "kode": "BRG005",
+      "nama": "Monitor LG UltraGear 24MP59G-P",
+      "kategori": "Elektronik",
+      "stok": 2,
+      "harga": 2000000
+    },
+    {
+      "id": "5",
+      "kode": "BRG006",
+      "nama": "Keyboard Mechanical Corsair K70",
+      "kategori": "Elektronik",
+      "stok": 4,
+      "harga": 1200000
+    },
+    {
+      "id": "6",
+      "kode": "BRG007",
+      "nama": "Printer Canon PIXMA G2010",
+      "kategori": "Elektronik",
+      "stok": 2,
+      "harga": 1800000
+    },
+    {
+      "id": "7",
+      "kode": "BRG008",
+      "nama": "Speaker Bluetooth JBL Flip 5",
+      "kategori": "Elektronik",
+      "stok": 6,
+      "harga": 800000
+    },
+    {
+      "id": "8",
+      "kode": "BRG009",
+      "nama": "Headphone Sony WH-1000XM4",
+      "kategori": "Elektronik",
+      "stok": 2,
+      "harga": 3500000
     }
   ],
   "penjualan": [
@@ -43,6 +91,12 @@
       "barangId": "1",
       "jumlah": 5,
       "tanggal": "2025-07-10"
+    },
+    {
+      "id": "e2f5",
+      "barangId": "8",
+      "jumlah": 1,
+      "tanggal": "2025-07-11"
     }
   ]
 }

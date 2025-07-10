@@ -9,32 +9,32 @@ import { RouterLink } from 'vue-router';
         </div>
 
         <div class="menu">
-            <RouterLink class="button" to="/">
+            <RouterLink class="button" to="/" exact-active-class="active">
                 <span class="material-icons">widgets</span>
                 <span class="text">Dashboard</span>
             </RouterLink>
 
-            <RouterLink class="button" to="/daftarbarang">
+            <RouterLink class="button" to="/daftarbarang" exact-active-class="active">
                 <span class="material-icons">shelves</span>
                 <span class="text">Daftar Barang</span>
             </RouterLink>
 
-            <RouterLink class="button" to="/transaksi">
+            <RouterLink class="button" to="/transaksi" exact-active-class="active">
                 <span class="material-icons">add_shopping_cart</span>
                 <span class="text">Transaksi</span>
             </RouterLink>
 
-            <RouterLink class="button" to="/riwayattransaksi">
+            <RouterLink class="button" to="/riwayattransaksi" exact-active-class="active">
                 <span class="material-icons">receipt_long</span>
                 <span class="text">Riwayat Transaksi</span>
             </RouterLink>
 
-            <RouterLink class="button" to="/manajemenpengguna">
+            <RouterLink class="button" to="/manajemenpengguna" exact-active-class="active">
                 <span class="material-icons">groups</span>
                 <span class="text">Manajemen Pengguna</span>
             </RouterLink>
 
-            <RouterLink class="button" to="/profile">
+            <RouterLink class="button" to="/profile" exact-active-class="active">
                 <span class="material-icons">person</span>
                 <span class="text">Profile</span>
             </RouterLink>
@@ -83,8 +83,22 @@ img {
     display: flex;
     align-items: center;
     text-decoration: none;
-
     padding: 8px 16px;
+    transition: background-color 0.2s ease;
+}
+
+.button.active {
+  background-color: #e6f0ff;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.button.active .material-icons {
+  color: #1e4a7d;
+}
+
+.button.active .text {
+  color: #1e4a7d;
 }
 
 .material-icons {
@@ -95,7 +109,7 @@ img {
 }
 
 .text {
-    color: #969496;
+    color: #1f2937;
     font-size: 14px;
 }
 
@@ -104,7 +118,7 @@ img {
 }
 
 .text:hover {
-    color: #6d6d6d;
+    color: #3d95fb;
 }
 
 </style>

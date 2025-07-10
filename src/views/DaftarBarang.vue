@@ -2,7 +2,6 @@
 import { ref, computed, onMounted } from 'vue'
 import axios from 'axios'
 
-// Data
 const barang = ref([])
 const searchQuery = ref('')
 
@@ -17,7 +16,6 @@ const form = ref({
 const isEdit = ref(false)
 const editId = ref(null)
 
-// Load data barang
 const fetchBarang = async () => {
   try {
     const res = await axios.get('http://localhost:3000/barang')
@@ -28,7 +26,6 @@ const fetchBarang = async () => {
 }
 onMounted(fetchBarang)
 
-// Tambah / Edit
 const handleSubmit = async () => {
   if (!form.value.kode || !form.value.nama || !form.value.kategori) return
 
@@ -45,20 +42,17 @@ const handleSubmit = async () => {
   resetForm()
 }
 
-// Edit mode
 const edit = (item) => {
   isEdit.value = true
   editId.value = item.id
   form.value = { ...item }
 }
 
-// Hapus data
 const hapus = async (id) => {
   await axios.delete(`http://localhost:3000/barang/${id}`)
   await fetchBarang()
 }
 
-// Reset form
 const resetForm = () => {
   isEdit.value = false
   editId.value = null
@@ -71,7 +65,6 @@ const resetForm = () => {
   }
 }
 
-// Pencarian
 const filteredBarang = computed(() =>
   barang.value.filter(item =>
     item.nama.toLowerCase().includes(searchQuery.value.toLowerCase())
@@ -83,7 +76,6 @@ const filteredBarang = computed(() =>
   <main>
     <h1>Daftar Barang</h1>
 
-    <!-- Form Tambah/Edit -->
     <form @submit.prevent="handleSubmit" class="form-barang">
       <div class="form-row">
         <label for="kode">Kode Barang</label>
@@ -112,7 +104,6 @@ const filteredBarang = computed(() =>
       </div>
     </form>
 
-    <!-- Pencarian -->
     <input
       type="text"
       v-model="searchQuery"
@@ -120,7 +111,6 @@ const filteredBarang = computed(() =>
       class="search-input"
     />
 
-    <!-- Tabel Daftar Barang -->
     <table>
       <thead>
         <tr>
@@ -155,12 +145,6 @@ const filteredBarang = computed(() =>
 main {
   padding: 32px;
   padding-left: 64px;
-}
-
-h1 {
-  font-size: 28px;
-  margin-bottom: 24px;
-  color: #3d95fb;
 }
 
 .form-barang {

@@ -2,14 +2,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Fira Sans", sans-serif;
-  background-color: #f6f7f9;
+  background-color: #f7fafa;
   color: #333;
 }
 
 h1 {
   font-size: 32px;
   margin-bottom: 16px;
-  color: #3d95fb;
+  color: #1E4A7D;
 }
 
 input[type="text"] {

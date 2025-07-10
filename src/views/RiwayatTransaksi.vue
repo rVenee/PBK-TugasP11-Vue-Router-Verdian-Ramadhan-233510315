@@ -59,7 +59,6 @@ onMounted(fetchData)
   <main class="riwayat-transaksi">
     <h1>Riwayat Transaksi</h1>
 
-    <!-- FILTER -->
     <div class="filters">
         <div class="filter-group">
             <label for="search">Cari Nama Barang</label>
@@ -78,7 +77,6 @@ onMounted(fetchData)
     </div>
 
 
-    <!-- TABEL -->
     <table>
       <thead>
         <tr>

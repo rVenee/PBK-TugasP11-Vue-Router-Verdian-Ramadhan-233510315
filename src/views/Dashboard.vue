@@ -9,6 +9,7 @@ const totalBarang = ref(0)
 const totalStok = ref(0)
 const totalTransaksi = ref(0)
 const totalPendapatan = ref(0)
+const currentDate = ref('')
 
 const fetchData = async () => {
   const resBarang = await axios.get('http://localhost:3000/barang')
@@ -21,12 +22,14 @@ const fetchData = async () => {
   totalStok.value = barang.value.reduce((sum, b) => sum + b.stok, 0)
   totalTransaksi.value = penjualan.value.length
 
-  // Hitung pendapatan dari penjualan x harga satuan
   totalPendapatan.value = penjualan.value.reduce((sum, t) => {
     const barangTerkait = barang.value.find(b => b.id === t.barangId)
     const harga = barangTerkait ? barangTerkait.harga : 0
     return sum + (t.jumlah * harga)
   }, 0)
+
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+  currentDate.value = new Date().toLocaleDateString('id-ID', options)
 }
 
 onMounted(fetchData)
@@ -34,24 +37,63 @@ onMounted(fetchData)
 
 <template>
   <main class="dashboard">
+    <div class="header-bar">
+      <img src="../assets/profilep.jpg" alt="profile" class="profile" />
+      <div>
+        <h2>Hi, Verdian</h2>
+        <p>{{ currentDate }}</p>
+      </div>
+    </div>
+
     <h1>Dashboard</h1>
 
-    <div class="card-container">
+    <div class="card-grid">
       <div class="card">
-        <h2>Total Barang</h2>
-        <p>{{ totalBarang }}</p>
+        <div class="card-content">
+          <div>
+            <h3>Total Barang</h3>
+            <p>{{ totalBarang }}</p>
+          </div>
+          <div class="icon-box">
+            <span class="material-icons">inventory_2</span>
+          </div>
+        </div>
       </div>
+
       <div class="card">
-        <h2>Total Stok</h2>
-        <p>{{ totalStok }}</p>
+        <div class="card-content">
+          <div>
+            <h3>Total Stok</h3>
+            <p>{{ totalStok }}</p>
+          </div>
+          <div class="icon-box">
+            <span class="material-icons">storage</span>
+          </div>
+        </div>
       </div>
+
       <div class="card">
-        <h2>Total Transaksi</h2>
-        <p>{{ totalTransaksi }}</p>
+        <div class="card-content">
+          <div>
+            <h3>Total Transaksi</h3>
+            <p>{{ totalTransaksi }}</p>
+          </div>
+          <div class="icon-box">
+            <span class="material-icons">shopping_cart</span>
+          </div>
+        </div>
       </div>
+
       <div class="card">
-        <h2>Total Pendapatan</h2>
-        <p>Rp {{ totalPendapatan.toLocaleString('id-ID') }}</p>
+        <div class="card-content">
+          <div>
+            <h3>Total Pendapatan</h3>
+            <p>Rp {{ totalPendapatan.toLocaleString('id-ID') }}</p>
+          </div>
+          <div class="icon-box">
+            <span class="material-icons">payments</span>
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -61,26 +103,84 @@ onMounted(fetchData)
 .dashboard {
   padding: 32px;
   padding-left: 64px;
+  background: #f9fafb;
+  min-height: 100vh;
 }
-.card-container {
+
+.header-bar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
 }
+
+.header-bar h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #3d95fb;
+}
+
+.header-bar p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.profile {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
 .card {
-  flex: 1 1 200px;
   background: white;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.2s ease;
 }
-.card h2 {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 8px;
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
+
+.icon-box {
+  font-size: 86px;
+  color: #d2e5fb;
+}
+
+.material-icons {
+  font-size: 86px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card h3 {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
 .card p {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   color: #3d95fb;
 }
