@@ -1,75 +1,3 @@
-<template>
-  <main>
-    <h1>Daftar Barang</h1>
-
-    <!-- Form Tambah/Edit -->
-    <form @submit.prevent="handleSubmit" class="form-barang">
-      <div class="form-row">
-        <label for="kode">Kode Barang</label>
-        <input id="kode" v-model="form.kode" type="text" required />
-      </div>
-      <div class="form-row">
-        <label for="nama">Nama Barang</label>
-        <input id="nama" v-model="form.nama" type="text" required />
-      </div>
-      <div class="form-row">
-        <label for="kategori">Kategori</label>
-        <input id="kategori" v-model="form.kategori" type="text" required />
-      </div>
-      <div class="form-row">
-        <label for="stok">Stok</label>
-        <input id="stok" v-model.number="form.stok" type="number" required />
-      </div>
-      <div class="form-row">
-        <label for="harga">Harga</label>
-        <input id="harga" v-model.number="form.harga" type="number" required />
-      </div>
-
-      <div class="form-actions">
-        <button type="submit">{{ isEdit ? 'Simpan Perubahan' : 'Tambah Barang' }}</button>
-        <button v-if="isEdit" type="button" @click="resetForm" class="cancel">Batal</button>
-      </div>
-    </form>
-
-    <!-- Pencarian -->
-    <input
-      type="text"
-      v-model="searchQuery"
-      placeholder="Cari nama barang..."
-      class="search-input"
-    />
-
-    <!-- Tabel Daftar Barang -->
-    <table>
-      <thead>
-        <tr>
-          <th>Kode</th>
-          <th>Nama Barang</th>
-          <th>Kategori</th>
-          <th>Stok</th>
-          <th>Harga</th>
-          <th>Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in filteredBarang" :key="item.id">
-          <td>{{ item.kode }}</td>
-          <td>{{ item.nama }}</td>
-          <td>{{ item.kategori }}</td>
-          <td>{{ item.stok }}</td>
-          <td>Rp {{ item.harga.toLocaleString('id-ID') }}</td>
-          <td>
-            <div class="aksi-button">
-              <button class="edit-btn" @click="edit(item)">Edit</button>
-              <button class="delete-btn" @click="hapus(item.id)">Hapus</button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
-</template>
-
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import axios from 'axios'
@@ -150,6 +78,78 @@ const filteredBarang = computed(() =>
   )
 )
 </script>
+
+<template>
+  <main>
+    <h1>Daftar Barang</h1>
+
+    <!-- Form Tambah/Edit -->
+    <form @submit.prevent="handleSubmit" class="form-barang">
+      <div class="form-row">
+        <label for="kode">Kode Barang</label>
+        <input id="kode" v-model="form.kode" type="text" required />
+      </div>
+      <div class="form-row">
+        <label for="nama">Nama Barang</label>
+        <input id="nama" v-model="form.nama" type="text" required />
+      </div>
+      <div class="form-row">
+        <label for="kategori">Kategori</label>
+        <input id="kategori" v-model="form.kategori" type="text" required />
+      </div>
+      <div class="form-row">
+        <label for="stok">Stok</label>
+        <input id="stok" v-model.number="form.stok" type="number" required />
+      </div>
+      <div class="form-row">
+        <label for="harga">Harga</label>
+        <input id="harga" v-model.number="form.harga" type="number" required />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit">{{ isEdit ? 'Simpan Perubahan' : 'Tambah Barang' }}</button>
+        <button v-if="isEdit" type="button" @click="resetForm" class="cancel">Batal</button>
+      </div>
+    </form>
+
+    <!-- Pencarian -->
+    <input
+      type="text"
+      v-model="searchQuery"
+      placeholder="Cari nama barang..."
+      class="search-input"
+    />
+
+    <!-- Tabel Daftar Barang -->
+    <table>
+      <thead>
+        <tr>
+          <th>Kode</th>
+          <th>Nama Barang</th>
+          <th>Kategori</th>
+          <th>Stok</th>
+          <th>Harga</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in filteredBarang" :key="item.id">
+          <td>{{ item.kode }}</td>
+          <td>{{ item.nama }}</td>
+          <td>{{ item.kategori }}</td>
+          <td>{{ item.stok }}</td>
+          <td>Rp {{ item.harga.toLocaleString('id-ID') }}</td>
+          <td>
+            <div class="aksi-button">
+              <button class="edit-btn" @click="edit(item)">Edit</button>
+              <button class="delete-btn" @click="hapus(item.id)">Hapus</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</template>
 
 <style scoped>
 main {

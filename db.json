@@ -3,9 +3,9 @@
     {
       "id": "1",
       "kode": "BRG001",
-      "nama": "Laptop ASUS X555",
+      "nama": "Laptop Lenovo IdeaPad 3",
       "kategori": "Elektronik",
-      "stok": 10,
+      "stok": 5,
       "harga": 7500000
     },
     {
@@ -13,7 +13,7 @@
       "kode": "BRG002",
       "nama": "Meja Kantor",
       "kategori": "Furniture",
-      "stok": 7,
+      "stok": 5,
       "harga": 1200000
     },
     {
@@ -21,57 +21,27 @@
       "kode": "BRG003",
       "nama": "Mouse Fantech Helios XD3V3",
       "kategori": "Elektronik",
-      "stok": 20,
+      "stok": 10,
       "harga": 250000
     }
   ],
   "penjualan": [
     {
-      "id": "1",
-      "barangId": 1,
-      "jumlah": 3,
-      "tanggal": "2024-01-05"
+      "id": "b0cb",
+      "barangId": "0f3c",
+      "jumlah": 7,
+      "tanggal": "2025-07-10"
     },
     {
-      "id": "2",
-      "barangId": 2,
-      "jumlah": 2,
-      "tanggal": "2024-01-10"
-    },
-    {
-      "id": "3",
-      "barangId": 3,
-      "jumlah": 5,
-      "tanggal": "2024-02-15"
-    },
-    {
-      "id": "4",
-      "barangId": 1,
-      "jumlah": 1,
-      "tanggal": "2024-03-10"
-    },
-    {
-      "id": "5",
-      "barangId": 2,
-      "jumlah": 2,
-      "tanggal": "2024-04-01"
-    },
-    {
-      "id": "9702",
+      "id": "017b",
       "barangId": "2",
-      "jumlah": 8,
-      "tanggal": "2025-07-10"
-    },
-    {
-      "id": "bffc",
-      "barangId": "1",
       "jumlah": 2,
       "tanggal": "2025-07-10"
     },
     {
-      "id": "fd89",
+      "id": "1f49",
       "barangId": "1",
-      "jumlah": 2,
+      "jumlah": 5,
       "tanggal": "2025-07-10"
     }
   ]

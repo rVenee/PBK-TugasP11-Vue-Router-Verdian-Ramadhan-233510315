@@ -1,28 +1,3 @@
-<template>
-  <main class="dashboard">
-    <h1>Dashboard</h1>
-
-    <div class="card-container">
-      <div class="card">
-        <h2>Total Barang</h2>
-        <p>{{ totalBarang }}</p>
-      </div>
-      <div class="card">
-        <h2>Total Stok</h2>
-        <p>{{ totalStok }}</p>
-      </div>
-      <div class="card">
-        <h2>Total Transaksi</h2>
-        <p>{{ totalTransaksi }}</p>
-      </div>
-      <div class="card">
-        <h2>Total Pendapatan</h2>
-        <p>Rp {{ totalPendapatan.toLocaleString('id-ID') }}</p>
-      </div>
-    </div>
-  </main>
-</template>
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
@@ -56,6 +31,31 @@ const fetchData = async () => {
 
 onMounted(fetchData)
 </script>
+
+<template>
+  <main class="dashboard">
+    <h1>Dashboard</h1>
+
+    <div class="card-container">
+      <div class="card">
+        <h2>Total Barang</h2>
+        <p>{{ totalBarang }}</p>
+      </div>
+      <div class="card">
+        <h2>Total Stok</h2>
+        <p>{{ totalStok }}</p>
+      </div>
+      <div class="card">
+        <h2>Total Transaksi</h2>
+        <p>{{ totalTransaksi }}</p>
+      </div>
+      <div class="card">
+        <h2>Total Pendapatan</h2>
+        <p>Rp {{ totalPendapatan.toLocaleString('id-ID') }}</p>
+      </div>
+    </div>
+  </main>
+</template>
 
 <style scoped>
 .dashboard {

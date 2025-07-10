@@ -1,13 +1,12 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
+
 <template>
     <aside>
         <div class="logo">
             <img src="../assets/bvent logo transparant.png" alt="Bvent">
         </div>
-
-        <h3>
-            VERDIAN RAMADHAN<br />
-            LEADER
-        </h3>
 
         <div class="menu">
             <RouterLink class="button" to="/">
@@ -25,9 +24,9 @@
                 <span class="text">Transaksi</span>
             </RouterLink>
 
-            <RouterLink class="button" to="/riwayatstok">
+            <RouterLink class="button" to="/riwayattransaksi">
                 <span class="material-icons">receipt_long</span>
-                <span class="text">Riwayat Stok</span>
+                <span class="text">Riwayat Transaksi</span>
             </RouterLink>
 
             <RouterLink class="button" to="/manajemenpengguna">
@@ -43,9 +42,6 @@
     </aside>
 </template>
 
-<script setup>
-import { RouterLink } from 'vue-router';
-</script>
 
 <style scoped>
 aside {
@@ -80,6 +76,7 @@ img {
 
 .menu {
     margin: 0 -16px;
+    margin-top: 20px;
 }
 
 .button {
@@ -108,14 +105,6 @@ img {
 
 .text:hover {
     color: #6d6d6d;
-}
-
-h3 {
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 40px;
-    line-height: 1.5;
-    font-size: 18px;
 }
 
 </style>
