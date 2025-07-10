@@ -21,7 +21,7 @@
       "kode": "BRG003",
       "nama": "Mouse Fantech Helios XD3V3",
       "kategori": "Elektronik",
-      "stok": 10,
+      "stok": 8,
       "harga": 250000
     },
     {
@@ -93,10 +93,10 @@
       "tanggal": "2025-07-10"
     },
     {
-      "id": "e2f5",
-      "barangId": "8",
-      "jumlah": 1,
-      "tanggal": "2025-07-11"
+      "id": "4b25",
+      "barangId": "0f3c",
+      "jumlah": 2,
+      "tanggal": "2025-07-10"
     }
   ]
 }
