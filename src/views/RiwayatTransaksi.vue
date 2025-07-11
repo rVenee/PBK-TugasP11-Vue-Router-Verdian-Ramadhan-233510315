@@ -20,7 +20,7 @@ const fetchData = async () => {
   transaksiGabung.value = penjualan.value.map(t => {
     const item = barang.value.find(b => b.id === t.barangId)
     return {
-      id: t.id, // ditambahkan
+      id: t.id,
       tanggal: t.tanggal,
       jumlah: t.jumlah,
       namaBarang: item?.nama || 'Tidak ditemukan',
@@ -53,7 +53,6 @@ const formatTanggal = (tgl) => {
   })
 }
 
-// ditambahkan: hapus transaksi
 const hapusTransaksi = async (id) => {
   if (confirm("Yakin ingin menghapus transaksi ini?")) {
     await axios.delete(`http://localhost:3000/penjualan/${id}`)
@@ -73,12 +72,10 @@ onMounted(fetchData)
             <label for="search">Cari Nama Barang</label>
             <input id="search" type="text" v-model="searchQuery" placeholder="Contoh: Laptop" />
          </div>
-
         <div class="filter-group">
             <label for="tanggalDari">Dari Tanggal</label>
             <input id="tanggalDari" type="date" v-model="tanggalDari" />
         </div>
-
         <div class="filter-group">
             <label for="tanggalSampai">Sampai</label>
             <input id="tanggalSampai" type="date" v-model="tanggalSampai" />
@@ -93,7 +90,7 @@ onMounted(fetchData)
           <th>Jumlah</th>
           <th>Harga Satuan</th>
           <th>Total Harga</th>
-          <th>Aksi</th> <!-- ditambahkan -->
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -107,7 +104,7 @@ onMounted(fetchData)
             <button @click="hapusTransaksi(item.id)" style="background: #e74c3c; color: white; padding: 6px 12px; border-radius: 6px; cursor: pointer;">
               Hapus
             </button>
-          </td> <!-- ditambahkan -->
+          </td>
         </tr>
       </tbody>
     </table>

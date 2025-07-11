@@ -40,7 +40,7 @@ onMounted(fetchData)
     <div class="header-bar">
       <img src="../assets/profilep.jpg" alt="profile" class="profile" />
       <div>
-        <h2>Hi, Verdian</h2>
+        <h2>Hi, Verdian Ramadhan</h2>
         <p>{{ currentDate }}</p>
       </div>
     </div>

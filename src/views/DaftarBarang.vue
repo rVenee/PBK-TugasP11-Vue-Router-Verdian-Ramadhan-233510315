@@ -75,7 +75,6 @@ const filteredBarang = computed(() =>
 <template>
   <main>
     <h1>Daftar Barang</h1>
-
     <form @submit.prevent="handleSubmit" class="form-barang">
       <div class="form-row">
         <label for="kode">Kode Barang</label>

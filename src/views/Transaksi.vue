@@ -6,7 +6,7 @@ const barangList = ref([])
 const form = ref({
   barangId: '',
   jumlah: 1,
-  tanggal: new Date().toISOString().split('T')[0] // default today
+  tanggal: new Date().toISOString().split('T')[0]
 })
 
 const fetchBarang = async () => {
